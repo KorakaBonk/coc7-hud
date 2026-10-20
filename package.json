@@ -1,0 +1,24 @@
+{
+	"name": "coc7-hud",
+	"version": "1.0.0",
+	"private": true,
+	"type": "module",
+	"description": "A hideable bottom-of-screen investigator HUD for the Call of Cthulhu 7th Edition system on Foundry VTT v14.",
+	"scripts": {
+		"build": "vite build",
+		"dev": "vite build --watch",
+		"check": "svelte-check --tsconfig ./tsconfig.json && vitest run",
+		"test": "vitest run"
+	},
+	"devDependencies": {
+		"@sveltejs/vite-plugin-svelte": "^6.0.0",
+		"svelte": "^5.0.0",
+		"svelte-check": "^4.0.0",
+		"typescript": "^5.6.0",
+		"vite": "^7.0.0",
+		"vitest": "^5.0.3"
+	},
+	"allowScripts": {
+		"esbuild@0.28.2": true
+	}
+}

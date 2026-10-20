@@ -1,0 +1,47 @@
+{
+	"id": "coc7-hud",
+	"title": "CoC7 HUD",
+	"description": "A hideable bottom-of-screen investigator HUD for Call of Cthulhu 7th Edition: portrait, vitals, characteristics, skills and weapons in one overlay.",
+	"version": "1.0.0",
+	"authors": [
+		{
+			"name": "koraka"
+		}
+	],
+	"compatibility": {
+		"minimum": "14",
+		"verified": "14"
+	},
+	"url": "https://github.com/KorakaBonk/coc7-hud",
+	"manifest": "https://github.com/KorakaBonk/coc7-hud/releases/latest/download/module.json",
+	"download": "https://github.com/KorakaBonk/coc7-hud/releases/latest/download/module.zip",
+	"esmodules": [
+		"coc7-hud.js"
+	],
+	"styles": [
+		"coc7-hud.css"
+	],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en.json"
+		},
+		{
+			"lang": "de",
+			"name": "Deutsch",
+			"path": "lang/de.json"
+		}
+	],
+	"relationships": {
+		"systems": [
+			{
+				"id": "CoC7",
+				"type": "system",
+				"compatibility": {
+					"minimum": "8.16"
+				}
+			}
+		]
+	}
+}

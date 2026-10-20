@@ -1,0 +1,49 @@
+name: Release
+
+# Push a tag like v1.0.0 to build the module and publish a GitHub release with
+# module.json and module.zip. The manifest URL in module.json points at the latest
+# release, so Foundry finds new versions on its own.
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run check
+      - run: npm run build
+
+      - name: Check that the tag matches module.json
+        run: |
+          version=$(jq -r .version dist/module.json)
+          if [ "v$version" != "$GITHUB_REF_NAME" ]; then
+            echo "Tag $GITHUB_REF_NAME does not match module.json version $version"
+            exit 1
+          fi
+
+      - name: Pin the download URL to this release
+        run: |
+          url="https://github.com/${GITHUB_REPOSITORY}/releases/download/${GITHUB_REF_NAME}/module.zip"
+          jq --arg url "$url" '.download = $url' dist/module.json > module.json
+          cp module.json dist/module.json
+
+      - name: Package
+        run: cd dist && zip -r ../module.zip . -x '*.map'
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" module.json module.zip --title "$GITHUB_REF_NAME" --generate-notes

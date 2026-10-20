@@ -1,0 +1,63 @@
+{
+	"COC7_HUD": {
+		"wrongSystem": "CoC7 HUD funktioniert nur mit dem System Call of Cthulhu 7. Edition.",
+		"openSheet": "Charakterbogen öffnen",
+		"openHud": "HUD zeigen",
+		"expand": "HUD einblenden",
+		"collapse": "HUD ausblenden",
+		"openSettings": "HUD-Einstellungen",
+		"conditions": "Zustände",
+		"age": "{age} Jahre alt",
+		"add": "1 {label} hinzufügen",
+		"remove": "1 {label} abziehen",
+		"rollCheck": "Probe auf {label} würfeln (Shift: ohne Dialog)",
+		"dailySanity": "Geistesstörung bei einem Verlust von 20% oder mehr geistiger Stabilität an einem Tag.",
+		"resetDailySanityTitle": "Neuen Tag beginnen",
+		"resetDailySanityBody": "Die heute verlorene Stabilität auf 0 zurücksetzen und die Tagesgrenze auf ein Fünftel der aktuellen Stabilität setzen?",
+		"attacksPerRound": "Angriffe pro Runde",
+		"sanLoss": "Stabilitätsverlust bei einer Begegnung (Erfolg/Misserfolg). Klick: Stabilitätswurf für die Ziele; Strg+Klick: Wurf-Link im Chat.",
+		"checkTooltip": "{label} {value}% (schwierig {hard}, extrem {extreme}). Shift: ohne Dialog.",
+		"searchSkills": "Fertigkeiten suchen",
+		"noSkills": "Keine Fertigkeit passt zur Suche.",
+		"flagged": "Für Entwicklung markiert",
+		"combatSkills": "Kampffertigkeiten",
+		"noWeapons": "Keine",
+		"attackTooltip": "Angriff mit {skill} {value}% (schwierig {hard}, extrem {extreme})",
+		"damageTooltip": "Schaden: {damage}",
+		"damageRange": "Reichweite {range} m",
+		"ammo": "Munition",
+		"ammoTooltip": "Geladene Schuss. Klick: +1, Rechtsklick: −1, Shift: ganz nachladen oder entladen.",
+		"initiative": "Initiative",
+		"rollInitiative": "Initiative würfeln",
+		"readiedGun": "Schusswaffe bereit",
+		"readiedGunTooltip": "Eine bereite Schusswaffe gibt +50 auf GE für die Initiative (mit der optionalen Initiativregel einen Bonuswürfel).",
+		"noSpells": "Keine Zaubersprüche.",
+		"noTalents": "Keine Pulp-Fertigkeiten.",
+		"noItems": "Keine Gegenstände.",
+		"openItem": "{name} öffnen",
+		"settings": {
+			"scale": {
+				"name": "HUD-Größe",
+				"hint": "Macht das ganze HUD größer oder kleiner."
+			},
+			"themeSource": {
+				"name": "Helles oder dunkles Design",
+				"hint": "Das HUD ist hell oder dunkel, je nach einem der beiden Farbschemata von Foundry (Einstellungen > Kern > Benutzeroberfläche).",
+				"interface": "Dem Farbschema der Oberfläche folgen",
+				"applications": "Dem Farbschema der Anwendungen folgen"
+			},
+			"hideMacroBar": {
+				"name": "Makroleiste ausblenden, solange das HUD offen ist",
+				"hint": "Die Makroleiste kommt zurück, sobald das HUD ausgeblendet wird."
+			},
+			"alwaysHideMacroBar": {
+				"name": "Makroleiste immer ausblenden",
+				"hint": "Blendet die Makroleiste von Foundry auch bei ausgeblendetem HUD aus."
+			},
+			"showForGM": {
+				"name": "HUD für den Spielleiter zeigen",
+				"hint": "Wenn aus, sieht der Spielleiter das HUD nie, auch nicht mit einem ausgewählten Investigator-Token."
+			}
+		}
+	}
+}

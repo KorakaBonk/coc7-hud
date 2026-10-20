@@ -1,0 +1,124 @@
+/* Global rules only. Everything else is scoped inside the Svelte components. */
+
+/* Hide Foundry's macro bar while the HUD is open (togglable in module settings). The class
+   is set on <body> by Hud.svelte, so the hotbar returns the moment the HUD collapses. */
+body.coc7-hud-open #hotbar {
+	display: none !important;
+}
+
+/*
+ * Theme tokens. Every color in the HUD comes from these, so the light and dark looks differ
+ * only here. Hud.svelte sets `coc7-hud--light` on the root when Foundry's color scheme is light
+ * (see src/hud/theme.ts). The tooltip lives in the root too, so it follows the same theme.
+ */
+#coc7-hud-root {
+	--hud-bg: rgb(18 16 22 / 0.92);
+	--hud-border: rgb(255 255 255 / 0.14);
+	--hud-text: #ece8df;
+	--hud-muted: #a8a193;
+	--hud-accent: #d9b45a;
+	--hud-surface: rgb(255 255 255 / 0.06);
+	--hud-hover: rgb(255 255 255 / 0.14);
+	--hud-shadow: 0 4px 18px rgb(0 0 0 / 0.55);
+	--hud-portrait-bg: #000;
+	--hud-input-focus: rgb(0 0 0 / 0.35);
+
+	--hud-bar-track: rgb(255 255 255 / 0.08);
+	--hud-bar-text: #f4f1ea;
+	--hud-bar-text-shadow: 0 1px 2px #000;
+	--hud-bar-hp: #3f8f4a;
+	--hud-bar-hp-low: #a53a3a;
+	--hud-bar-mp: #3a6ea5;
+	--hud-bar-san: #6a4fa5;
+	--hud-bar-luck: #9a7b2c;
+
+	--hud-condition-bg: rgb(0 0 0 / 0.65);
+	--hud-condition-icon: #ff3b3b;
+	--hud-warning: #e0a050;
+
+	--hud-tooltip-bg: rgb(18 16 22 / 0.96);
+	--hud-tooltip-text: #ece8df;
+
+	/* Light theme only: the character sheet's tentacles, inside the bar behind the portrait. */
+	--hud-tentacles: none;
+
+	position: fixed;
+	inset: auto 0 0 0;
+	z-index: 20;
+	display: flex;
+	justify-content: center;
+	/* The container never blocks clicks on the canvas; only the HUD's own panels do. */
+	pointer-events: none;
+}
+
+/* Aged paper and ink, with the oxblood red of the CoC7 sheet as the accent. */
+#coc7-hud-root.coc7-hud--light {
+	--hud-bg: rgb(244 238 226 / 0.96);
+	--hud-border: rgb(70 52 34 / 0.24);
+	--hud-text: #2b241b;
+	--hud-muted: #6e6354;
+	--hud-accent: #8b1a1a;
+	--hud-surface: rgb(70 52 34 / 0.06);
+	--hud-hover: rgb(70 52 34 / 0.13);
+	--hud-shadow: 0 4px 14px rgb(40 28 16 / 0.3);
+	--hud-portrait-bg: #d9d0bf;
+	--hud-input-focus: rgb(255 255 255 / 0.65);
+
+	--hud-bar-track: rgb(70 52 34 / 0.08);
+	--hud-bar-text: #2b241b;
+	--hud-bar-text-shadow: 0 0 2px rgb(255 255 255 / 0.7);
+	--hud-bar-hp: #8cc493;
+	--hud-bar-hp-low: #e39a96;
+	--hud-bar-mp: #9dbde3;
+	--hud-bar-san: #bfa6e3;
+	--hud-bar-luck: #e3cb7c;
+
+	--hud-condition-bg: rgb(255 255 255 / 0.85);
+	--hud-condition-icon: #a51d1d;
+	--hud-warning: #a85a00;
+
+	--hud-tooltip-bg: rgb(250 246 238 / 0.98);
+	--hud-tooltip-text: #2b241b;
+
+	/* CoC7's own art, relative to this stylesheet in modules/coc7-hud/ (see .hud-bar in Hud.svelte). */
+	--hud-tentacles: url('../../systems/CoC7/assets/images/tentacles.webp');
+}
+
+/* A drawer's section heading, e.g. "Skills" or "Melee weapons". */
+#coc7-hud-root .coc7-hud-heading {
+	margin: 0.25rem 0;
+	padding: 0;
+	color: var(--hud-muted);
+	font-size: 0.6875rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	border: none;
+}
+
+#coc7-hud-root .coc7-hud-heading:first-child {
+	margin-top: 0;
+}
+
+/* The HUD's tooltip (see src/hud/tooltip.ts). One font size for every tooltip. */
+.coc7-hud-tooltip {
+	position: fixed;
+	z-index: 21;
+	max-width: 20rem;
+	padding: 0.1875rem 0.5rem;
+	color: var(--hud-tooltip-text);
+	font: 0.75rem/1.3 var(--font-body, 'Signika', sans-serif);
+	white-space: normal;
+	pointer-events: none;
+	background: var(--hud-tooltip-bg);
+	border: 1px solid var(--hud-border);
+	border-radius: 0.25rem;
+	box-shadow: 0 2px 8px rgb(0 0 0 / 0.35);
+	opacity: 0;
+	visibility: hidden;
+}
+
+.coc7-hud-tooltip.visible {
+	opacity: 1;
+	visibility: visible;
+}

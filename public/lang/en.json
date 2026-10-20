@@ -1,0 +1,63 @@
+{
+	"COC7_HUD": {
+		"wrongSystem": "CoC7 HUD only works with the Call of Cthulhu 7th Edition system.",
+		"openSheet": "Open character sheet",
+		"openHud": "Show HUD",
+		"expand": "Show the HUD",
+		"collapse": "Hide the HUD",
+		"openSettings": "HUD settings",
+		"conditions": "Conditions",
+		"age": "{age} years old",
+		"add": "Add 1 {label}",
+		"remove": "Remove 1 {label}",
+		"rollCheck": "Roll a {label} check (Shift: skip the dialog)",
+		"dailySanity": "Sanity lost today: {loss}. Losing {limit} or more in one day means indefinite insanity. Click to start a new day.",
+		"resetDailySanityTitle": "Start a new day",
+		"resetDailySanityBody": "Set the sanity lost today back to 0 and the daily limit to one fifth of current Sanity?",
+		"attacksPerRound": "Attacks per round",
+		"sanLoss": "Sanity loss for encountering it (success/failure). Click: Sanity check for the targeted tokens; Ctrl+click: post a check link to chat.",
+		"checkTooltip": "{label} {value}% (hard {hard}, extreme {extreme}). Shift: skip the dialog.",
+		"searchSkills": "Search skills",
+		"noSkills": "No skill matches the search.",
+		"flagged": "Ticked for an experience check",
+		"combatSkills": "Combat skills",
+		"noWeapons": "None",
+		"attackTooltip": "Attack with {skill} {value}% (hard {hard}, extreme {extreme})",
+		"damageTooltip": "Damage: {damage}",
+		"damageRange": "Range {range} yards",
+		"ammo": "Ammunition",
+		"ammoTooltip": "Rounds loaded. Click: +1, right-click: -1, Shift: reload fully or empty.",
+		"initiative": "Initiative",
+		"rollInitiative": "Roll initiative",
+		"readiedGun": "Readied firearm",
+		"readiedGunTooltip": "A readied firearm adds 50 to DEX for initiative (a bonus die with the optional initiative rule).",
+		"noSpells": "No spells.",
+		"noTalents": "No Pulp talents.",
+		"noItems": "No items.",
+		"openItem": "Open {name}",
+		"settings": {
+			"scale": {
+				"name": "HUD scale",
+				"hint": "Makes the whole HUD larger or smaller."
+			},
+			"themeSource": {
+				"name": "Light or dark theme",
+				"hint": "The HUD is light or dark following one of Foundry's two color schemes (Configure Settings > Core > User Interface).",
+				"interface": "Follow the Interface color scheme",
+				"applications": "Follow the Applications color scheme"
+			},
+			"hideMacroBar": {
+				"name": "Hide the macro bar while the HUD is open",
+				"hint": "The macro bar comes back when you hide the HUD."
+			},
+			"alwaysHideMacroBar": {
+				"name": "Always hide the macro bar",
+				"hint": "Hides Foundry's macro bar even while the HUD is hidden."
+			},
+			"showForGM": {
+				"name": "Show the HUD for the Keeper",
+				"hint": "When off, a Keeper never sees the HUD, even with an investigator token selected."
+			}
+		}
+	}
+}
