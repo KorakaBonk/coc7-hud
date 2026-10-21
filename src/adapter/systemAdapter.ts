@@ -278,7 +278,12 @@ export function readCombatSkills(actor: CoC7Actor): CombatSkillView[] {
 	const skills: CombatSkillView[] = [];
 	for (const item of actor.items ?? []) {
 		if (item.type !== 'skill' || !isCombatSkill(item)) continue;
-		skills.push({ id: item.id, name: item.name ?? '', ...checkValues(toNumber(item.system?.value)) });
+		skills.push({
+			id: item.id,
+			name: item.name ?? '',
+			flagged: Boolean(item.system?.flags?.developement),
+			...checkValues(toNumber(item.system?.value)),
+		});
 	}
 	return skills.sort((a, b) => a.name.localeCompare(b.name, game.i18n.lang));
 }

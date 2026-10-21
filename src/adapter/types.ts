@@ -97,6 +97,8 @@ export interface WeaponView {
 export interface CombatSkillView extends CheckValues {
 	id: string;
 	name: string;
+	/** Ticked for an experience check at the end of the session. */
+	flagged: boolean;
 }
 
 /** The bound actor's place in the current combat, or null when it is not in one. */

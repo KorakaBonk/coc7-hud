@@ -157,6 +157,11 @@
 						onRoll();
 					}}
 				>
+					<span class="flag">
+						{#if skill.flagged}
+							<i class="fa-solid fa-square-check" aria-label={t('flagged')}></i>
+						{/if}
+					</span>
 					<span class="name">{skill.name}</span>
 					<span class="value">{skill.value}</span>
 				</button>
@@ -274,6 +279,14 @@
 		object-fit: cover;
 		border: none;
 		border-radius: 0.125rem;
+	}
+
+	/* The experience tick, as in the skills drawer; the slot stays empty so names line up. */
+	.flag {
+		flex: none;
+		width: 0.875rem;
+		color: var(--hud-accent);
+		font-size: 0.75rem;
 	}
 
 	.name {
