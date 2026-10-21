@@ -1,6 +1,6 @@
 {
 	"name": "coc7-hud",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"private": true,
 	"type": "module",
 	"description": "A hideable bottom-of-screen investigator HUD for the Call of Cthulhu 7th Edition system on Foundry VTT v14.",
