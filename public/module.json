@@ -2,7 +2,7 @@
 	"id": "coc7-hud",
 	"title": "CoC7 HUD",
 	"description": "A hideable bottom-of-screen investigator HUD for Call of Cthulhu 7th Edition: portrait, vitals, characteristics, skills and weapons in one overlay.",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"authors": [
 		{
 			"name": "KorakaBonk"
